@@ -1,4 +1,4 @@
-# actions-comment-run
+# comment-run
 Execute any script in a GitHub issue comment
 
 ## Say "hello, world"
@@ -324,6 +324,18 @@ pip install numpy
 import numpy as np
 
 print(np.array([1, 2, 3]))
+```
+````
+
+Redirect `STDOUT` and/or `STDERR` to `comment.buffer` file or write any text to this file to post it as a comment at the end (location of this buffer file can be customized using `comment-buffer` input variable).
+
+````md
+@github-actions run
+
+```sh
+#! /bin/sh
+echo "Files in $PWD" > comment.buffer
+ls -l >> comment.buffer
 ```
 ````
 
